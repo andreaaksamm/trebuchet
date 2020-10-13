@@ -1,0 +1,11 @@
+.c-grid-wrapper {
+	background-color: var(--color-bg);
+}
+
+@media (min-width: 1024px) {
+	.c-grid {
+		display: grid;
+		grid-gap: var(--gap);
+		grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+	}
+}

@@ -1,0 +1,33 @@
+{{#get "authors" limit="3" include="count.posts" order="count.posts desc"}}
+	{{#if authors}}
+		<div class="c-widget o-inner-wide o-inner-wide--no-pad-desk">
+			<h4 class="c-widget__title">{{t "authors"}}</h4>
+			<div class="c-widget__content">
+				<div class="c-widget-authors">
+					{{#foreach authors}}
+						<a href="{{url}}" class="c-author-mini">
+
+							<div class="c-author-mini__media">
+								<div class="c-author-mini__image-wrapper">
+									{{#if profile_image}}
+										<img class="c-author-mini__image lazyload" src="{{img_url profile_image size="xs"}}" alt="author-{{name}}" />
+									{{else}}
+										<img class="c-author-mini__image c-author-mini__image--no-image lazyload" src="{{asset 'images/no-author-image.png'}}" alt="author-{{name}}" />
+									{{/if}}
+								</div>
+							</div>
+
+							<div class="c-author-mini__content">
+								<h4 class="c-author-mini__name">{{name}}</h4>
+								{{#if bio}}
+									<div class="c-author-mini__bio">{{bio}}</div>
+								{{/if}}
+							</div>
+
+						</a>
+					{{/foreach}}
+				</div>
+			</div>
+		</div>
+	{{/if}}
+{{/get}}

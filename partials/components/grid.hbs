@@ -1,0 +1,23 @@
+<div class="c-grid-wrapper">
+	<div class="c-grid o-inner-wide o-inner-wide--no-pad-mobile">
+		<div class="c-cards">
+			{{#foreach posts visibility="all"}}
+			{{> components/card}}
+			{{/foreach}}
+		</div>
+
+		<div class="c-pagination c-pagination--mobile">
+			{{pagination}}
+		</div>
+
+		<div class="c-sidebar">
+			{{> components/sidebar/subscribe-widget}}
+			{{> components/sidebar/featured-widget}}
+			{{> components/sidebar/authors-widget}}
+		</div>
+	</div>
+
+	<div class="c-pagination">
+		{{pagination}}
+	</div>
+</div>

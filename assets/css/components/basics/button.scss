@@ -1,0 +1,107 @@
+/*------------------------------------*\
+$BUTTON
+\*------------------------------------*/
+
+.c-btn {
+	display: inline-block;
+	position: relative;
+	line-height: 36px;
+	margin: 0;
+	border: 1px solid var(--color-brand);
+	border-radius: var(--radius);
+	outline: 0;
+	padding: 0.35rem 1.8rem 0;
+	width: 100%;
+	height: 42px;
+	white-space: nowrap;
+	background: 0;
+	cursor: pointer;
+	transition: 0.4s ease;
+}
+
+@media (min-width: 550px) {
+	.c-btn {
+		width: auto;
+	}
+}
+
+.c-btn--brand:hover {
+	background-color: var(--color-brand);
+	color: var(--color-brand-contrast);
+}
+
+.c-btn--brand:active {
+	background-color: var(--color-contrast);
+	color: var(--color-brand);
+}
+
+.c-btn--simple {
+	border: 0;
+	padding: 0;
+}
+
+.c-btn--rectangular {
+	border-radius: 0;
+}
+
+.c-btn--borderless {
+	border: 0;
+}
+
+.c-btn--full {
+	display: inline-block;
+	width: 100%;
+}
+
+.c-btn--primary {
+	border-color: var(--color-brand);
+	background-color: var(--color-brand);
+	color: var(--color-brand-contrast);
+}
+
+.c-btn--primary:hover {
+	background-color: var(--color-brand-contrast);
+	color: var(--color-brand);
+}
+
+.c-btn--primary:active {
+	background-color: var(--color-brand);
+	color: var(--color-brand-contrast);
+}
+
+.c-btn--primary:hover svg {
+	fill: var(--color-brand);
+}
+
+.c-btn--primary:active svg {
+	fill: var(--color-brand-contrast);
+}
+
+		.c-btn__content {
+			display: inline-block;
+		}
+
+		.loading .c-btn__content {
+			visibility: hidden;
+		}
+
+		.c-btn__loader {
+			display: none;
+		}
+
+		.loading .c-btn__loader {
+			display: inline-block;
+			position: absolute;
+			left: 50%;
+			height: 15px;
+			margin-left: -66px;
+			transform: scale(0.15);
+		}
+
+		.c-btn svg {
+			fill: var(--color-base);
+		}
+
+.c-btn--primary svg {
+	fill: var(--color-brand-contrast);
+}

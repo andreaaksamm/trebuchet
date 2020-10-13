@@ -1,0 +1,17 @@
+{{#if isSecondary}}
+		{{#foreach navigation}}
+			<li class="c-social-list__item nav-{{slug}}">
+				<a target="_blank" rel="noreferrer" href="{{url}}" class="c-social-list__link c-social-list__link--{{slug}}">
+					<svg width="20" height="20" role="img" aria-label="{{slug}} icon">
+						<use xlink:href="#{{slug}}"></use>
+					</svg>
+				</a>
+			</li>
+		{{/foreach}}
+{{else}}
+	{{#foreach navigation}}
+		<li class="c-menu__navigation-item {{link_class for=(url) class=(concat "nav-" slug)}}">
+			<a class="c-menu__navigation-item-link" href="{{url absolute="true"}}">{{label}}</a>
+		</li>
+	{{/foreach}}
+{{/if}}

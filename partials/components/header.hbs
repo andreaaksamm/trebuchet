@@ -1,0 +1,60 @@
+<header class="c-masthead">
+	<div class="o-inner-wide">
+		<div class="c-masthead__inside">
+
+			<div class="c-masthead__branding">
+				{{#if @site.logo}}
+				<a class="c-masthead__branding-link" href="{{@site.url}}"><img class="c-masthead__logo" src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+				{{else}}
+				<a class="c-masthead__branding-link" href="{{@site.url}}">{{@site.title}}</a>
+				{{/if}}
+			</div>
+			<nav class="c-masthead__site-navigation">
+				<div class="c-actions">
+					<span id="js-search-button" class="c-actions__item c-actions__item--search">
+						<button aria-label="Search" id="js-search" class="c-btn c-btn--simple c-actions__button c-actions__button-search">
+							{{> icons/search}}
+						</button>
+					</span>
+					<span id="js-menu" class="c-actions__item">
+						<button aria-label="Menu" class="c-btn c-btn--simple c-actions__button c-actions__button-menu">
+							<span class="c-actions__button-menu-icon">{{> icons/menu}}</span>
+							<span class="c-actions__button-menu-text">{{t "menu"}}</span>
+						</button>
+					</span>
+				</div>
+			</nav>
+
+			<nav class="c-menu">
+				<div class="c-menu__section  c-menu__section--navigation">
+					<ul class="c-menu__navigation-wrapper">
+						{{navigation}}
+					</ul>
+				</div>
+
+				{{#if @labs.members}}
+				<div class="c-menu__section c-menu__section--members">
+					<ul class="c-menu__navigation">
+						{{#if @member}}
+						<li class="c-menu__navigation-item">
+							<a class="c-menu__navigation-item-link" href="{{@site.url}}/account/">{{t "Account"}}</a>
+						</li>
+						<li class="c-menu__navigation-item">
+							<a class="c-menu__navigation-item-link" href="#signout" data-members-signout>{{t "Log out"}}</a>
+						</li>
+						{{else}}
+						<li class="c-menu__navigation-item">
+							<a class="c-menu__navigation-item-link" href="/membership">{{t "Membership"}}</a>
+						</li>
+						<li class="c-menu__navigation-item">
+							<a class="c-menu__navigation-item-link" href="/signin">{{t "Sign In"}}</a>
+						</li>
+						{{/if}}
+					</ul>
+				</div>
+				{{/if}}
+			</nav>
+
+		</div>
+	</div>
+</header>

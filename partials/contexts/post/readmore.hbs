@@ -1,0 +1,93 @@
+<nav class="c-post-readmore">
+	{{#prev_post}}
+		<a href="{{url}}" class="c-post-readmore__item c-post-readmore__item--prev {{#unless feature_image}}c-post-readmore__item--simple{{/unless}}">
+			<div class="c-post-readmore__image-wrapper">
+				{{#if feature_image}}
+					{{#unless next_post}}
+						<img class="c-post-readmore__image lazyload"
+								 data-src="{{img_url feature_image size='m'}}"
+								 data-srcset="{{img_url feature_image size="m"}} 600w,
+															{{img_url feature_image size="l"}} 1200w,
+															{{img_url feature_image size="xl"}} 2000w"
+								 sizes="(min-width: 2000px) 2000px,
+												(min-width: 1000px) 1200px, 600px"
+								 alt="{{title}}"
+								 />
+					{{else}}
+						<img class="c-post-readmore__image lazyload"
+								 data-src="{{img_url feature_image size='m'}}"
+								 data-srcset="{{img_url feature_image size="m"}} 600w,
+															{{img_url feature_image size="l"}} 1200w,
+															{{img_url feature_image size="xl"}} 2000w"
+								 sizes="(min-width: 1000px) 2000px,
+												(min-width: 600px) 1200px, 600px"
+								 alt="{{title}}"
+								 />
+					{{/unless}}
+				{{else}}
+					<div class="c-post-readmore__image c-post-readmore__image--no-image lazyload"></div>
+				{{/if}}
+			</div>
+
+			<div class="c-post-readmore__content">
+				<div class="c-post-readmore__label">
+					prev
+				</div>
+				<div class="c-post-readmore__title">
+					{{title}}
+				</div>
+				<div class="c-post-readmore__date">
+					<time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D, YYYY"}}</time>
+				</div>
+			</div>
+		</a>
+	{{else}}
+		<div class="c-post-readmore__item c-post-readmore__item--empty"></div>
+	{{/prev_post}}
+
+	{{#next_post}}
+		<a href="{{url}}" class="c-post-readmore__item c-post-readmore__item--next {{#unless feature_image}}c-post-readmore__item--simple{{/unless}}">
+			<div class="c-post-readmore__image-wrapper">
+				{{#if feature_image}}
+					{{#unless prev_post}}
+						<img class="c-post-readmore__image lazyload"
+								 data-src="{{img_url feature_image size='m'}}"
+								 data-srcset="{{img_url feature_image size="m"}} 600w,
+															{{img_url feature_image size="l"}} 1200w,
+															{{img_url feature_image size="xl"}} 2000w"
+								 sizes="(min-width: 2000px) 2000px,
+												(min-width: 1000px) 1200px, 600px"
+								 alt="{{title}}"
+								 />
+					{{else}}
+						<img class="c-post-readmore__image lazyload"
+								 data-src="{{img_url feature_image size='m'}}"
+								 data-srcset="{{img_url feature_image size="m"}} 600w,
+															{{img_url feature_image size="l"}} 1200w,
+															{{img_url feature_image size="xl"}} 2000w"
+								 sizes="(min-width: 1000px) 2000px,
+												(min-width: 600px) 1200px, 600px"
+								 alt="{{title}}"
+								 />
+					{{/unless}}
+				{{else}}
+					<div class="c-post-readmore__image c-post-readmore__image--no-image lazyload"></div>
+				{{/if}}
+			</div>
+
+			<div class="c-post-readmore__content">
+				<div class="c-post-readmore__label">
+					next
+				</div>
+				<div class="c-post-readmore__title">
+					{{title}}
+				</div>
+				<div class="c-post-readmore__date">
+					<time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D, YYYY"}}</time>
+				</div>
+			</div>
+		</a>
+	{{else}}
+		<div class="c-post-readmore__item c-post-readmore__item--empty"></div>
+	{{/next_post}}
+</nav>

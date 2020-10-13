@@ -1,0 +1,177 @@
+.c-membership {
+	margin: 4rem 0 3rem;
+	text-align: center;
+}
+
+		.c-membership__title {
+		}
+
+		.c-membership__sub-title {
+			margin: 0 auto;
+			margin-top: 1rem;
+			max-width: 550px;
+		}
+
+		.c-membership__plans {
+			display: grid;
+			grid-gap: 2rem;
+			grid-template-areas: 'monthly' 'yearly' 'subscriber';
+			grid-template-columns: 1fr;
+			margin-top: 3rem;
+		}
+
+		.c-membership__plans--member {
+			grid-template-areas: 'monthly' 'yearly';
+			grid-template-columns: 1fr;
+		}
+
+		@media (min-width: 800px) {
+			.c-membership__plans {
+				grid-template-areas: 'monthly yearly' 'subscriber subscriber';
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+			}
+
+			.c-membership__plans--member {
+				grid-template-areas: 'monthly yearly';
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: none;
+			}
+		}
+
+
+		@media (min-width: 1024px) {
+			.c-membership__plans {
+				grid-template-areas: 'subscriber monthly yearly';
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: initial;
+			}
+
+			.c-membership__plans--member {
+				grid-template-areas: 'monthly yearly';
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: none;
+			}
+		}
+
+			.c-plan {
+				position: relative;
+				border: 1px solid var(--color-border);
+				border-radius: var(--radius);
+				overflow: hidden;
+				text-align: left;
+			}
+
+			.c-plan:hover {
+				background-color: var(--color-bg);
+			}
+
+			.c-plan:hover .c-plan__action {
+				background-color: var(--color-brand-hover);
+			}
+
+			.c-plan.error:hover .c-plan__action {
+				background-color: color-mod(var(--color-red) l(40%));
+			}
+
+			.c-plan--subscriber {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				grid-area: subscriber;
+			}
+
+			.c-plan--monthly {
+				grid-area: monthly;
+			}
+
+			.c-plan--yearly {
+				grid-area: yearly;
+			}
+
+			.c-plan > * {
+				padding: 1.5rem 2rem;
+			}
+
+				.c-plan__loading {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: absolute;
+					top: 0;
+					left: 0;
+					visibility: hidden;
+					background: rgba(12,12,12,0);
+					width: 100%;
+					height: 100%;
+					transition: visibility 0.3s ease-out, background 0.3s ease-out;
+				}
+
+				.loading .c-plan__loading {
+					visibility: visible;
+					background: rgba(12,12,12,0.4);
+				}
+
+					.c-plan__loader svg {
+						width: 24px;
+						height: 24px;
+					}
+
+				.c-plan__header {
+				}
+
+						.c-plan__title {
+							padding-top: 0.25rem;
+							font-size: 2.2rem;
+						}
+
+						.c-plan__price {
+							margin-top: 0.5rem;
+						}
+
+				.c-plan__content {
+					border-top: 1px solid var(--color-border);
+				}
+
+						.c-plan__features {
+							padding-top: 0.25rem;
+							list-style: none;
+						}
+
+						.c-plan__features > * + * {
+							margin-top: 1rem;
+						}
+
+								.c-plan__feature {
+								}
+
+				.c-plan__action {
+					border-top: 1px solid var(--color-border);
+					background-color: var(--color-brand);
+					color: var(--color-brand-contrast);
+					text-align: center;
+					transition: background-color 0.4s ease-in-out;
+					text-transform: uppercase;
+				}
+
+				.error .c-plan__action {
+					background-color: var(--color-red);
+				}
+
+						.c-plan__action-button {
+							display: inline-block;
+							padding-top: 0.25rem;
+						}
+
+						.error .c-plan__action-button {
+							display: none;
+						}
+
+						.c-plan__error-message {
+							display: none;
+							padding-top: 0.25rem;
+						}
+
+						.error .c-plan__error-message {
+							display: block;
+						}

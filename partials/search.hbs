@@ -1,0 +1,23 @@
+<div id="js-search-modal" class="c-search-modal">
+	<div class="c-search-modal__close">
+		<span class="c-search-modal__icon">{{> icons/close}}</span>
+		<span class="c-search-modal__text">{{t "close"}}</span>
+	</div>
+
+	<div id="js-search-modal__wrapper" class="c-search-modal__wrapper">
+		<div class="c-search">
+			<div class="c-search__header">
+				<input id="js-search-input" class="c-search__input" placeholder="{{t "search..."}}" />
+			</div>
+			<div class="c-search__results-wrapper">
+				<div class="c-search__empty">
+					<div id="js-search-empty" class="c-search__empty-header">...</div>
+					<div class="c-search__empty-body"></div>
+				</div>
+				<div id="js-results-container" class="c-search__results"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="js-no-results" class="c-search__no-results">{{t "No results found..."}}</div>
+</div>

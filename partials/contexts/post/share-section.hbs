@@ -1,0 +1,42 @@
+<div class="c-post-section c-post-section--share">
+
+	<div class="c-post-section__title-wrapper">
+		<div class="c-post-section__start o-inner">
+			<div class="c-post-section__title">
+				Share
+			</div>
+		</div>
+	</div>
+
+	<div class="c-post-section__content o-inner">
+		<div class="c-post-section__share">
+			<ul class="c-post-share-list">
+				<li class="c-post-share-list__item">
+					<a class="c-post-share-list__item-link u-social-icon u-social-icon--facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+						<span class="c-post-share-list__icon">{{> icons/facebook}}</span>
+						<span class="c-post-share-list__label">facebook</span>
+					</a>
+				</li>
+				<li class="c-post-share-list__item">
+					<a class="c-post-share-list__item-link u-social-icon u-social-icon--twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+						<span class="c-post-share-list__icon">{{> icons/twitter}}</span>
+						<span class="c-post-share-list__label">twitter</span>
+					</a>
+				</li>
+				<li class="c-post-share-list__item">
+					<a class="c-post-share-list__item-link u-social-icon u-social-icon--email" href="mailto:?subject={{title}}&amp;body={{url absolute="true"}}">
+						<span class="c-post-share-list__icon">{{> icons/email}}</span>
+						<span class="c-post-share-list__label">email</span>
+					</a>
+				</li>
+				<li class="c-post-share-list__item">
+					<button id="js-clipboard" aria-label="Copy post link to clipboard" class="c-post-share-list__item-link c-post-share-list__item-link--permalink u-social-icon u-social-icon--permalink" data-clipboard-text="{{url absolute="true"}}">
+						<span class="c-post-share-list__icon">{{> icons/link}}</span>
+						<span class="c-post-share-list__label">permalink</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>

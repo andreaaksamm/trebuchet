@@ -1,0 +1,94 @@
+{{!< default}}
+{{#if @member.paid}}
+	<script>window.location = '{{@site.url}}';</script>
+{{else}}
+	<main class="c-site-main">
+		<main class="o-inner-wide">
+			<div class="c-membership">
+				<h1 class="c-membership__title">{{t "Membership"}}</h1>
+				<p class="c-membership__sub-title">{{t "Become a {blogtitle} member and unlock full access to the entire library of members-only content & updates." blogtitle=@site.title}}</p>
+				<div class="c-membership__plans {{#if @member}}c-membership__plans--member{{/if}}">
+
+					{{#unless @member}}
+					<a aria-label="subscriber plan subscription" href="{{@site.url}}/signup/" class="c-membership__plan c-plan c-plan--subscriber">
+						<div class="c-plan__header">
+							<h2 class="c-plan__title">{{t "Subscriber"}}</h2>
+							<div class="c-plan__price">{{t "free"}}</div>
+						</div>
+						<div class="c-plan__content">
+							<ul class="c-plan__features">
+								<li class="c-plan__feature">{{t "Access to subscriber posts"}}</li>
+								<li class="c-plan__feature">{{t "Regular updates with new content"}}</li>
+								<li class="c-plan__feature">—</li>
+								<li class="c-plan__feature">—</li>
+								<li class="c-plan__feature">—</li>
+							</ul>
+						</div>
+						<div class="c-plan__action">
+							<span class="c-plan__action-button">
+								{{t "Continue"}}
+							</span>
+						</div>
+					</a>
+					{{/unless}}
+
+					<a aria-label="monthly plan subscription" href="javascript:" data-members-plan="Monthly" class="c-membership__plan c-plan c-plan--monthly">
+						<div class="c-plan__loading">
+							<div class="c-plan__loader">{{> icons/loader}}</div>
+						</div>
+
+						<div class="c-plan__header">
+							<h2 class="c-plan__title">{{t "Monthly"}}</h2>
+							<div class="c-plan__price">{{@price.currency_symbol}}{{@price.monthly}} / {{t "month"}}</div>
+						</div>
+						<div class="c-plan__content">
+							<ul class="c-plan__features">
+								<li class="c-plan__feature">{{t "Full access to all premium posts"}}</li>
+								<li class="c-plan__feature">{{t "Regular updates with new content"}}</li>
+								<li class="c-plan__feature">{{t "Support independent publishing"}}</li>
+								<li class="c-plan__feature">{{t "Simple, secure card payment"}}</li>
+								<li class="c-plan__feature">—</li>
+							</ul>
+						</div>
+						<div class="c-plan__action">
+							<span class="c-plan__action-button">
+								{{t "Continue"}}
+							</span>
+							<span class="c-plan__error-message">
+								{{t "Error"}}
+							</span>
+						</div>
+					</a>
+
+					<a aria-label="yearly plan subscription"  href="javascript:" data-members-plan="Yearly" class="c-membership__plan c-plan c-plan--yearly">
+						<div class="c-plan__loading">
+							<div class="c-plan__loader">{{> icons/loader}}</div>
+						</div>
+						<div class="c-plan__header">
+							<h2 class="c-plan__title">{{t "Yearly"}}</h2>
+							<div class="c-plan__price">{{@price.currency_symbol}}{{@price.yearly}} / {{t "year"}}</div>
+						</div>
+						<div class="c-plan__content">
+							<ul class="c-plan__features">
+								<li class="c-plan__feature">{{t "Full access to all premium posts"}}</li>
+								<li class="c-plan__feature">{{t "Regular updates with new content"}}</li>
+								<li class="c-plan__feature">{{t "Support independent publishing"}}</li>
+								<li class="c-plan__feature">{{t "Simple, secure card payment"}}</li>
+								<li class="c-plan__feature">{{t "One easy payment instead of 12"}}</li>
+							</ul>
+						</div>
+						<div class="c-plan__action">
+							<span class="c-plan__action-button">
+								{{t "Continue"}}
+							</span>
+							<span class="c-plan__error-message">
+								{{t "Error"}}
+							</span>
+						</div>
+					</a>
+
+				</div>
+			</div>
+		</main>
+	</main>
+{{/if}}

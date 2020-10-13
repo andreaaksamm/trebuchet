@@ -1,0 +1,75 @@
+{{!< default}}
+
+<main class="c-site-main">
+	{{#author}}
+	<div class="c-archive-header {{#if cover_image}}c-archive-header--background{{/if}}">
+
+		{{#if cover_image}}
+		<div class="c-author__cover-wrapper">
+			<img class="c-author__cover lazyload"
+					 data-src="{{img_url cover_image size='m'}}"
+			     data-srcset="{{img_url cover_image size="m"}} 600w,
+			      				    {{img_url cover_image size="l"}} 1200w,
+			      				    {{img_url cover_image size="xl"}} 2000w"
+					 sizes="(min-width: 1000px) 2000px,
+					        (min-width: 600px) 1200px, 600px"
+					 alt="{{name}} cover image"
+					 />
+		</div>
+		{{/if}}
+
+		<div class="c-archive-header__content o-inner-wide o-inner-wide--center">
+
+			<div class="c-author">
+
+				<div class="c-archive-header__media">
+					<div class="c-archive-header__image-wrapper c-archive-header__image-wrapper--desk-small">
+					{{#if profile_image}}
+						<img class="c-archive-header__image c-archive-header__image--desk-small lazyload" src="{{img_url profile_image size='s'}}" alt="{{name}}" />
+					{{else}}
+						<img class="c-archive-header__image c-archive-header__image--no-image lazyload" src="{{asset 'images/no-author-image.png'}}"  alt="{{name}}" />
+					{{/if}}
+					</div>
+				</div>
+
+				<div class="c-archive-header__info c-author__info">
+					<div class="c-archive-header__title">
+						<h1 class="c-archive-header__name">
+							{{name}}
+						</h1>
+					</div>
+
+					<div class="c-archive-header__meta">
+						{{#if location}}
+							<p class="c-author__location">from {{location}}</p>
+						{{/if}}
+						{{#if bio}}
+							<p class="c-author__bio c-archive-header__description">{{bio}}</p>
+						{{/if}}
+						<div class="c-author__social">
+							{{#if facebook}}
+								<div class="c-author__social-item c-author__social-item--facebook"><a aria-label="facebook author page" href="{{facebook_url}}">{{> icons/facebook}}</a></div>
+							{{/if}}
+							{{#if twitter}}
+								<div class="c-author__social-item c-author__social-item--twitter"><a aria-label="twitter author page" href="{{twitter_url}}">{{> icons/twitter}}</a></div>
+							{{/if}}
+							{{#if website}}
+								<div class="c-author__social-item c-author__social-item--website"><a aria-label="author website" href="{{website}}">{{> icons/link}}</a></div>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+
+				<div class="c-archive-header__rss">
+					<a rel="noopener noreferrer" target="_blank" aria-label="author rss" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/">
+						{{> icons/rss}}
+					</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	{{/author}}
+
+	{{> components/grid}}
+</main>

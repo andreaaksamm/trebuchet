@@ -1,0 +1,35 @@
+{{!< ../default}}
+<main class="c-site-main c-site-main--strecth">
+	{{#if @member}}
+
+		{{!-- Logged in: Redirect home --}}
+
+		<script>window.location = '{{@site.url}}';</script>
+
+	{{else}}
+
+		{{!-- Not logged in: Signin form --}}
+
+		<div class="c-members-box o-inner-wide">
+
+			<form class="c-auth-form" data-members-form="signin">
+				<h1 class="c-auth-form__title">{{t "Welcome Back!"}}</h1>
+				<p class="c-auth-form__sub-title">{{t "Sign in to your account to access premium content."}}</p>
+
+				<div class="c-auth-box">
+					<input class="c-input" aria-label="Email Address" data-members-email type="email" placeholder="{{t "Your email address"}}" required="true" autocomplete="false" />
+					<button class="c-btn c-btn--primary c-auth-box__btn" type="submit">
+						<span class="c-btn__content">{{t "Subscribe"}}</span>
+						<span class="c-btn__loader">{{> icons/loader}}</span>
+					</button>
+				</div>
+
+				<div class="c-message c-message--success"><strong>{{t "Great!"}}</strong> {{t "Check your inbox and click the link to complete signin"}}</div>
+				<div class="c-message c-message--error">{{t "Please enter a valid email address!"}}</div>
+
+				<p class="c-auth-form__ref">{{t "Don't have an account yet?"}} <a href="{{@site.url}}/signup/">{{t "Sign up"}}</a></p>
+			</form>
+
+		<div>
+	{{/if}}
+</main>

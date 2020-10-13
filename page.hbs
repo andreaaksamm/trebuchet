@@ -1,0 +1,16 @@
+{{!< default}}
+
+{{#post}}
+{{> contexts/post/sticky-header}}
+<main class="c-site-main">
+
+	{{> contexts/page/header}}
+
+	<div class="c-post-content">
+		<div class="o-content o-canvas">
+			{{ content }}
+		</div>
+	</div>
+
+</main>
+{{/post}}

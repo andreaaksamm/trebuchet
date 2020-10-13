@@ -1,0 +1,13 @@
+<header class="c-post-header c-page-header {{#if feature_image}}c-page-header--background{{/if}}">
+
+	{{#if feature_image}}
+		<div class="c-page-header__image-wrapper">
+			<img class="c-page-header__image lazyload" src="{{img_url feature_image size="l"}}" />
+		</div>
+	{{/if}}
+
+	<div class="c-page-header__content o-inner">
+		<h1 class="c-page-header__title">{{title}}</h1>
+	</div>
+
+</header>

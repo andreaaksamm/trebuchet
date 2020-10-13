@@ -1,0 +1,122 @@
+.c-search-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(12,12,12,0);
+	z-index: 200;
+	visibility: hidden;
+	transition: visibility 0.3s ease-out, background 0.3s ease-out, backdrop-filter 0.3s ease-out;
+	backdrop-filter: blur(0px);
+}
+
+.search-opened .c-search-modal {
+	visibility: visible;
+	background: rgba(12,12,12,0.85);
+	backdrop-filter: blur(5px);
+}
+
+		.c-search-modal__close {
+			position: absolute;
+			top: 3.7rem;
+			right: 2rem;
+			cursor: pointer;
+			color: var(--color-white);
+			font-size: 1.3rem;
+			font-weight: 700;
+		}
+
+		.c-search-modal__close svg {
+			fill: var(--color-white);
+			width: 11px;
+			height: 11px;
+		}
+
+		.c-search-modal__close:hover {
+			opacity: 0.8;
+		}
+
+		.c-search-modal__text {
+			text-transform: uppercase;
+		}
+
+		.c-search-modal__wrapper {
+			margin: 9rem auto 0;
+			border-radius: 3px;
+			background: white;
+			width: 100%;
+			opacity: 0;
+			transform: translateY(40px);
+			transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+		}
+
+		.search-opened .c-search-modal__wrapper {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@media (min-width: 550px) {
+			.c-search-modal__wrapper {
+				width: 500px;
+				margin: 9rem auto 0;
+			}
+		}
+
+		.c-search__header {
+			border-bottom: 1px solid var(--color-border);
+		}
+
+				.c-search__input {
+					border: 0;
+					border-radius: 3px;
+					outline: 0;
+					padding: 1rem 1rem 0.75rem;
+					width: 100%;
+					min-width: 0;
+					font-size: 2.2rem;
+				}
+
+		.c-search__results-wrapper {
+
+		}
+
+				.c-search__empty-header {
+					padding: 0.75rem 0 1.5rem;
+					text-align: center;
+				}
+
+				.c-search__results {
+					overflow: auto;
+					max-height: 50vh;
+				}
+
+				.c-search__item {
+					display: block;
+					padding: 1rem 1rem 0.75rem;
+					font-size: 1.75rem;
+				}
+
+				.c-search__item:hover,
+				.c-search__item--selected {
+					background: #f4f4f4;
+				}
+
+				.c-search__item a {
+					text-decoration: none;
+				}
+
+				.c-search__no-items {
+					display: block;
+					padding: 1rem 1rem 0.75rem;
+					font-size: 1.75rem;
+				}
+
+				.c-search__results > * + * {
+					border-top: 1px solid var(--color-border);
+				}
+
+				.c-search__no-results {
+					display: none;
+				}

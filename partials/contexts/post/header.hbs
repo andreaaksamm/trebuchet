@@ -1,0 +1,35 @@
+<header class="c-post-header {{#if feature_image}}c-post-header--with-background{{/if}}">
+
+	{{#if feature_image}}
+		<div class="c-post-header__image-wrapper">
+			<img class="c-post-header__image lazyload"
+					 data-src="{{img_url feature_image size='m'}}"
+			     data-srcset="{{img_url feature_image size="m"}} 600w,
+			      				    {{img_url feature_image size="l"}} 1200w,
+			      				    {{img_url feature_image size="xl"}} 2000w"
+					 sizes="(min-width: 1000px) 2000px,
+					        (min-width: 600px) 1200px, 600px"
+					 alt="{{title}}"
+					 />
+		</div>
+	{{/if}}
+
+	<div class="c-post-header__content o-inner">
+		<h1 class="c-post-header__title">{{title}}</h1>
+		<div class="c-post-header__meta">
+			<span class="c-post-header__featured">FEATURED</span>
+			{{#foreach tags}}
+				<a href="{{url}}" class="c-post-header__tag">{{name}}</a>
+			{{/foreach}}
+			<div class="c-post-header__meta">
+				<span class="c-post-header__date">
+					<time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D, YYYY"}}</time>
+				</span>
+				<span class="c-post-header__authors">
+					{{#has author="count:>2"}}<a class="c-post-header__link-authors" href="#post-authors">{{t "Multiple authors"}}</a>{{else}}{{authors separator=" and "}}{{/has}}
+				</span>
+			</div>
+		</div>
+	</div>
+
+</header>

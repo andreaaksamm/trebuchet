@@ -1,0 +1,65 @@
+/*------------------------------------*\
+$LAYOUT
+\*------------------------------------*/
+
+.c-site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	border-top: 3px solid var(--color-brand);
+}
+
+.c-site-main {
+	flex-grow: 1;
+}
+
+.c-site-main--strecth {
+	display: flex;
+	align-items: stretch;
+}
+
+.o-inner-wide {
+	margin: 0 auto;
+	max-width: 1520px;
+	padding-left: var(--gap-mobile);
+	padding-right: var(--gap-mobile);
+}
+
+.o-inner-wide--center {
+	text-align: center;
+}
+
+.o-inner-wide--no-pad-mobile {
+	padding: 0;
+}
+
+@media (min-width: 1024px) {
+	.o-inner-wide {
+		padding-left: var(--gap);
+		padding-right: var(--gap);
+	}
+
+	.o-inner-wide--no-pad-mobile {
+		padding-left: var(--gap);
+		padding-right: var(--gap);
+	}
+
+	.o-inner-wide--no-pad-desk {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.o-inner {
+	margin: 0 auto;
+	max-width: 740px;
+	padding-left: var(--gap-mobile);
+	padding-right: var(--gap-mobile);
+}
+
+@media (min-width: 1024px) {
+	.o-inner {
+		padding-left: var(--gap);
+		padding-right: var(--gap);
+	}
+}

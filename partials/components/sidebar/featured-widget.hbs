@@ -1,0 +1,31 @@
+{{#get "posts" filter="featured:true" limit="3"}}
+	{{#if posts}}
+		<div class="c-widget o-inner-wide o-inner-wide--no-pad-desk">
+			<h4 class="c-widget__title">{{t "featured posts"}}</h4>
+			<div class="c-widget__content">
+				<div class="c-widget-featured ">
+					{{#foreach posts}}
+						<a href="{{url}}" class="c-post-mini">
+
+							<div class="c-post-mini__media">
+								<div class="c-post-mini__image-wrapper">
+									{{#if feature_image}}
+										<img class="c-post-mini__image lazyload" src="{{img_url feature_image size="xs"}}" alt="{{title}}"/>
+									{{else}}
+										<img class="c-post-mini__image c-post-mini__image--no-image lazyload" src="{{asset 'images/no-post-image-100.png'}}" alt="{{title}}"/>
+									{{/if}}
+								</div>
+							</div>
+
+							<div class="c-post-mini__content">
+								<h4 class="c-post-mini__title">{{title}}</h4>
+								<div class="c-post-mini__date">20 Jan 2020</div>
+							</div>
+
+						</a>
+					{{/foreach}}
+				</div>
+			</div>
+		</div>
+	{{/if}}
+{{/get}}

@@ -1,0 +1,24 @@
+<div class="c-intro {{#if @site.cover_image}}c-intro--bg{{/if}}">
+	<div class="c-intro__image-wrapper">
+		{{#if @site.cover_image}}
+			<img class="c-intro__image lazyload"
+					 data-src="{{img_url @site.cover_image size='m'}}"
+			     data-srcset="{{img_url @site.cover_image size="m"}} 600w,
+			      				    {{img_url @site.cover_image size="l"}} 1200w,
+			      				    {{img_url @site.cover_image size="xl"}} 2000w"
+					 sizes="(min-width: 1000px) 2000px,
+					        (min-width: 600px) 1200px, 600px"
+					 alt="{{@site.title}}"
+					 />
+		{{/if}}
+	</div>
+	<div class="c-intro__content o-inner-wide">
+		<div class="c-intro__description">
+			{{#if @site.description}}
+				{{@site.description}}
+			{{else}}
+				{{@site.title}}
+			{{/if}}
+		</div>
+	</div>
+</div>

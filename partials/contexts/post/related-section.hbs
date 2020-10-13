@@ -1,0 +1,42 @@
+{{#get "posts" limit="3" filter="id:-{{id}}+tag:{{primary_tag.slug}}" as |related|}}
+	{{#if related}}
+		<div class="c-post-section c-post-section--related">
+
+			<div class="c-post-section__title-wrapper">
+				<div class="c-post-section__start o-inner">
+					<div class="c-post-section__title">
+						Related posts
+					</div>
+				</div>
+			</div>
+
+			<div class="c-post-section__content o-inner">
+				<div class="c-post-section__related">
+					<div class="c-related-posts">
+						{{#foreach related visibility="all"}}
+							<a href="{{url}}" class="c-related">
+
+								<div class="c-related__media">
+									<div class="c-related__image-wrapper">
+										{{#if feature_image}}
+											<img class="c-related__image lazyload" src="{{img_url feature_image size="s"}}" alt="{{title}}"/>
+										{{else}}
+											<img class="c-related__image c-related__image--no-image lazyload" src="{{asset 'images/no-post-image-100.png'}}" alt="{{title}}"/>
+										{{/if}}
+									</div>
+								</div>
+
+								<div class="c-related__content">
+									<h4 class="c-related__title">{{title}}</h4>
+									<div class="c-related__date">20 Jan 2020</div>
+								</div>
+
+							</a>
+						{{/foreach}}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	{{/if}}
+{{/get}}

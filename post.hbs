@@ -1,0 +1,41 @@
+{{!< default}}
+
+{{#post}}
+	{{> contexts/post/sticky-header}}
+	<main class="c-site-main">
+
+		{{> contexts/post/header}}
+
+		<div class="c-post-content">
+			<div class="o-content o-canvas">
+				{{#if access}}
+					{{ content }}
+				{{else}}
+					<div class="c-post-content__excerpt">
+						{{excerpt}}
+					</div>
+					<div class="c-post-access">
+						{{#has visibility="members"}}
+							<h3 class="c-post-access__title">This post is for subscribers only</h3>
+						{{else}}
+							<h3 class="c-post-access__title">This post is for paying subscribers only</h3>
+						{{/has}}
+						<p>You don't have access to this post on <strong>{{@site.title}}</strong> at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access.</p>
+						<a class="c-btn c-btn--primary c-post-access__action" href="/signup/">Subscribe now</a>
+					</div>
+				{{/if}}
+			</div>
+		</div>
+
+		<div class="c-post-sections">
+			{{> contexts/post/share-section}}
+			{{> contexts/post/authors-section}}
+			{{> contexts/post/comments-section}}
+			{{> contexts/post/related-section}}
+			{{> contexts/post/subscribe-section}}
+		</div>
+
+		{{> contexts/post/readmore}}
+
+	</main>
+{{/post}}

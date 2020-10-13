@@ -1,0 +1,15 @@
+<div class="c-pagination__inside o-inner-wide">
+	{{#if prev}}
+	<a class="c-pagination__arrow c-pagination__arrow--prev" href="{{page_url prev}}">&larr;</a>
+	{{else}}
+	<span class="c-pagination__arrow c-pagination__arrow--disabled">&larr;</span>
+	{{/if}}
+
+	<span class="c-pagination__count">{{page}} {{t "of"}} {{pages}}</span>
+
+	{{#if next}}
+	<a class="c-pagination__arrow c-pagination__arrow--next c-pagination__arrow--right" href="{{page_url next}}">&rarr;</a>
+	{{else}}
+	<span class="c-pagination__arrow c-pagination__arrow--disabled c-pagination__arrow--right">&rarr;</span>
+	{{/if}}
+</div>

@@ -1,0 +1,62 @@
+<div class="c-widget c-widget--bg c-widget--desk-box c-widget--center">
+	<div class="c-widget__content">
+
+		{{#if @labs.members}}
+		<div class="c-widget-subscribe">
+			<div class="c-subscribe-mini o-inner-wide o-inner-wide--no-pad-desk">
+				<form class="c-auth-form" data-members-form="subscribe">
+					<h2 class="c-auth-form__title c-auth-form__title--small">{{t "{blogtitle} Newsletter" blogtitle=@site.title}}</h2>
+					<p class="c-auth-form__sub-title">{{t "Join the newsletter to receive the latest updates in your inbox."}}</p>
+
+					<div class="c-auth-box c-auth-box--desk-vertical">
+						<input class="c-input" aria-label="Email Address" data-members-email type="email" placeholder="{{t "Your email address"}}" required="true" autocomplete="false" />
+						<button class="c-btn c-btn--primary c-auth-box__btn c-auth-box__btn--desk-full" type="submit">
+							<span class="c-btn__content">{{t "Subscribe"}}</span>
+							<span class="c-btn__loader">{{> icons/loader}}</span>
+						</button>
+					</div>
+
+					<div class="c-message c-message--success"><strong>{{t "Great!"}}</strong> {{t "Check your inbox and click the link to complete signin"}}</div>
+					<div class="c-message c-message--error">{{t "Please enter a valid email address!"}}</div>
+				</form>
+			</div>
+		</div>
+		{{/if}}
+
+		<div class="c-widget-social  o-inner-wide o-inner-wide--no-pad-desk">
+			<ul class="c-social-list">
+
+				{{#if @site.facebook}}
+				<li class="c-social-list__item nav-facebook">
+					<a target="_blank" rel="noreferrer" href="{{facebook_url @site.facebook}}" class="c-social-list__link c-social-list__link--facebook">
+						<svg width="20" height="20" role="img" aria-label="facebook icon">
+							<use xlink:href="#facebook"></use>
+						</svg>
+					</a>
+				</li>
+				{{/if}}
+
+				{{#if @site.twitter}}
+				<li class="c-social-list__item nav-twitter">
+					<a target="_blank" rel="noreferrer" href="{{twitter_url @site.twitter}}" class="c-social-list__link c-social-list__link--twitter">
+						<svg width="20" height="20" role="img" aria-label="twitter icon">
+							<use xlink:href="#twitter"></use>
+						</svg>
+					</a>
+				</li>
+				{{/if}}
+
+				<li class="c-social-list__item nav-rss">
+					<a target="_blank" rel="noreferrer" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" class="c-social-list__link c-social-list__link--rss">
+						<svg width="20" height="20" role="img" aria-label="rss icon">
+							<use xlink:href="#rss"></use>
+						</svg>
+					</a>
+				</li>
+
+				{{navigation type="secondary"}}
+			</ul>
+		</div>
+	</div>
+
+</div>

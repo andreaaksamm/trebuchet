@@ -1,0 +1,41 @@
+.u-hidden {
+	display: none;
+}
+
+.u-color-brand {
+	color: var(--color-brand) !important;
+}
+
+.u-hide-link-text {
+	line-height: 0;
+	font-size: 0;
+	color: transparent;
+}
+
+.u-social-icon svg {
+	fill: var(--color-meta);
+}
+
+.u-social-icon--facebook:hover svg {
+	fill: var(--color-facebook);
+}
+
+.u-social-icon--twitter:hover svg {
+	fill: var(--color-twitter);
+}
+
+.u-social-icon--email:hover svg {
+	fill: var(--color-email);
+}
+
+.u-social-icon--permalink:hover svg {
+	fill: var(--color-permalink);
+}
+
+@mixin u-ellipsis($lines) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $lines; /* number of lines to show */
+	-webkit-box-orient: vertical;
+}

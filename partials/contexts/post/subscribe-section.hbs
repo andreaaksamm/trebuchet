@@ -1,0 +1,37 @@
+{{#if @labs.members}}
+	{{#unless @member}}
+		<div class="c-post-section c-post-section--subscribe">
+
+			<div class="c-post-section__title-wrapper">
+				<div class="c-post-section__start o-inner">
+					<div class="c-post-section__title">
+						Subscribe
+					</div>
+				</div>
+			</div>
+
+			<div class="c-post-section__content o-inner">
+				<div class="c-post-section__subscribe">
+					<div class="c-post-subscribe">
+						<form class="c-auth-form" data-members-form="subscribe">
+							<h2 class="c-auth-form__title">{{@site.title}} Newsletter</h2>
+							<p class="c-auth-form__sub-title">Join the newsletter to receive the latest updates in your inbox.</p>
+
+							<div class="c-auth-box c-auth-box--desk-vertical">
+								<input class="c-input" aria-label="Email Address" data-members-email type="email" placeholder="Your email address" required="true" autocomplete="false" />
+								<button class="c-btn c-btn--primary c-auth-box__btn c-auth-box__btn--desk-full" type="submit">
+									<span class="c-btn__content">Subscribe</span>
+									<span class="c-btn__loader">{{> icons/loader}}</span>
+								</button>
+							</div>
+
+							<div class="c-message c-message--success"><strong>Great!</strong> Check your inbox and click the link to complete signin</div>
+							<div class="c-message c-message--error">Please enter a valid email address!</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	{{/unless}}
+{{/if}}

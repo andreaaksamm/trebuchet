@@ -1,0 +1,155 @@
+/*------------------------------------*\
+$AUTHOR
+\*------------------------------------*/
+@media (min-width: 550px) {
+	.c-author {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.c-author__cover-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+}
+
+.c-author__cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media(min-width: 550px) {
+	.c-author__info {
+		flex: 1 1 auto;
+		margin-left: 2rem;
+		text-align: left;
+	}
+}
+		.c-author__location {
+			margin-top: 0.25rem;
+		}
+
+		.c-author__social {
+			margin-top: 1.5rem;
+		}
+
+		.c-author__social svg {
+			width: 21px;
+			height: 21px;
+		}
+
+		.c-archive-header--background .c-author__social svg {
+			fill: var(--color-white);
+		}
+
+		.c-author__social-item {
+			margin: 0 1rem;
+			line-height: 0;
+			display: inline-block;
+		}
+
+		@media (min-width: 550px) {
+			.c-author__social-item {
+				margin: 0;
+				margin-right: 1rem;
+			}
+		}
+
+		.c-author__social-item--facebook:hover svg {
+			fill: var(--color-facebook);
+		}
+
+		.c-author__social-item--twitter:hover svg {
+			fill: var(--color-twitter);
+		}
+
+		.c-author__social-item--website:hover svg {
+			fill: var(--color-permalink);
+		}
+
+/*------------------------------------*\
+$AUTHORS CUSTOM PAGE
+\*------------------------------------*/
+.c-authors-content {
+}
+
+.c-authors-content > * + * {
+	border-top: 1px solid var(--color-border);
+}
+
+		.c-author-item {
+			display: inline-block;
+			width: 100%;
+		}
+
+		.c-author-item:hover {
+			background-color: var(--color-bg);
+		}
+
+		.c-author-item:active {
+			background-color: var(--color-bg-active);
+		}
+
+		.c-author-item__inside {
+			display: block;
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+			text-align: center;
+		}
+
+		@media (min-width: 550px) {
+			.c-author-item__inside {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+				.c-author-item__image-wrapper {
+					margin: 0 auto;
+					margin-bottom: 0.25rem;
+					border: 1px solid var(--color-border);
+					border-radius: 80px;
+					padding: 3px;
+					width: 120px;
+					height: 160px;
+					overflow: hidden;
+				}
+
+				@media (min-width: 550px) {
+					.c-author-item__image-wrapper {
+						flex: 0 0 auto;
+					}
+				}
+
+				.c-author-item__image {
+					border-radius: 70px;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				.c-author-item__image--no-image {
+					object-fit: cover;
+				}
+
+				@media (min-width: 550px) {
+					.c-author-item__info {
+						flex: 1 1 auto;
+						text-align: left;
+					}
+				}
+
+						.c-author-item__title {
+							padding-top: 0.25rem;
+							font-size: 3rem;
+							font-weight: 700;
+						}
+
+						.c-author-item__meta {
+							margin-top: 1rem;
+						}

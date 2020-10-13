@@ -1,0 +1,91 @@
+.c-masthead {
+	padding: 1.25rem 0;
+	border-bottom: 1px solid var(--color-border);
+}
+
+		.c-masthead__inside {
+			display: flex;
+			position: relative;
+			align-items: center;
+		}
+
+				.c-masthead__branding {
+					display: inline-block;
+					padding-top: 0.5rem;
+					font-size: 3rem;
+					font-weight: 700;
+					@include u-ellipsis(1);
+				}
+
+						.c-masthead__logo {
+							max-height: 42px;
+						}
+
+						.c-masthead__branding-link {
+							transition: opacity 0.4s ease-in-out;
+						}
+
+						.c-masthead__branding-link:hover {
+							opacity: 0.8;
+						}
+
+				.c-masthead__site-navigation {
+					margin-left: auto;
+				}
+
+						.c-actions {
+							display: flex;
+						}
+
+								.c-actions__item {
+									display: inline-block;
+									margin-left: 0.75rem;
+								}
+
+								.c-actions__item--search {
+									display: none;
+								}
+
+										.c-actions__button {
+											min-width: 42px;
+											line-height: 0;
+										}
+
+										.c-actions__button:hover svg {
+											fill: var(--color-brand);
+											transition: 0.4s ease;
+										}
+
+										.c-actions__button:hover {
+											color: var(--color-brand);
+										}
+
+										.c-actions__button-search svg {
+											width: 14px;
+											height: 14px;
+											fill: var(--color-meta);
+										}
+
+										.c-actions__button-menu {
+											color: var(--color-meta);
+										}
+
+										.c-actions__button-menu svg {
+											width: 10px;
+											height: 10px;
+											fill: var(--color-meta);
+										}
+
+										.menu-opened .c-actions__button-menu {
+											color: var(--color-brand);
+										}
+
+										.menu-opened .c-actions__button-menu svg {
+											fill: var(--color-brand);
+										}
+
+										.c-actions__button-menu-text {
+											font-size: 1.3rem;
+											font-weight: 700;
+											text-transform: uppercase;
+										}

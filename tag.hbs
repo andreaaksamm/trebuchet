@@ -1,0 +1,45 @@
+{{!< default}}
+
+<main class="c-site-main">
+	{{#tag}}
+		<div class="c-archive-header">
+			<div class="c-archive-header__content o-inner-wide o-inner-wide--center">
+
+				<div class="c-tag">
+					<div class="c-archive-header__media">
+						{{#if feature_image}}
+							<div class="c-archive-header__image-wrapper">
+								<img class="c-archive-header__image lazyload" src="{{img_url feature_image size='s'}}" alt="tag {{name}}"/>
+							</div>
+						{{/if}}
+					</div>
+
+					<div class="c-archive-header__info c-archive-header__info--narrow">
+						<div class="c-archive-header__title">
+							<h1 class="c-archive-header__name">
+								#{{slug}}
+							</h1>
+							{{#if accent_color}}
+								<span class="c-archive-header__color" style="border-color: {{accent_color}};"></span>
+							{{/if}}
+						</div>
+
+						<div class="c-archive-header__meta">
+							<p class="c-archive-header__description">{{description}}</p>
+						</div>
+					</div>
+
+					<div class="c-archive-header__rss">
+						<a rel="noopener noreferrer" target="_blank" aria-label="tag rss" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/">
+							{{> icons/rss}}
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	{{/tag}}
+
+	{{> components/tags-list}}
+	{{> components/grid}}
+</main>

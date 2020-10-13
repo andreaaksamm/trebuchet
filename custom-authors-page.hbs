@@ -1,0 +1,61 @@
+{{!< default}}
+
+{{#post}}
+<main class="c-site-main">
+
+	<header class="c-page-header {{#if feature_image}}c-page-header--background{{/if}}">
+		{{#if feature_image}}
+		<div class="c-page-header__image-wrapper">
+			<img class="c-page-header__image lazyload"
+					 data-src="{{img_url feature_image size='m'}}"
+			     data-srcset="{{img_url feature_image size="m"}} 600w,
+			      				    {{img_url feature_image size="l"}} 1200w,
+			      				    {{img_url feature_image size="xl"}} 2000w"
+					 sizes="(min-width: 1000px) 2000px,
+					        (min-width: 600px) 1200px, 600px"
+					 alt="{{@site.title}}"
+					 />
+		</div>
+		{{/if}}
+
+		<div class="c-page-header__content o-inner">
+			<h1 class="c-page-header__title">{{title}}</h1>
+			{{#if content}}
+			<div class="c-page-header__sub-title">{{content}}</div>
+		{{/if}}
+		</div>
+	</header>
+
+	<div class="c-authors-content">
+		{{#get "authors" include="count.posts" order="count.posts desc"}}
+		{{#foreach authors}}
+		<a class="c-author-item" href="{{url}}">
+
+			<div class="c-author-item__inside o-inner-wide">
+				<div class="c-author-item__image-wrapper">
+					{{#if profile_image}}
+					<img class="c-author-item__image lazyload" src="{{img_url profile_image size='s'}}" alt="{{name}}"/>
+					{{else}}
+					<img class="c-author-item__image c-author-item__image--no-image lazyload" src="{{asset 'images/no-author-image.png'}}" alt="{{name}}"/>
+					{{/if}}
+				</div>
+
+				<div class="c-author-item__info o-inner-wide">
+					<div class="c-author-item__title">{{name}}</div>
+					{{#if bio}}
+					<div class="c-author-item__description">{{bio}}</div>
+					{{/if}}
+					<div class="c-author-item__meta">
+						{{#get "posts" filter="authors:{{slug}}"}}
+						<div class="c-author-item__posts">{{plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</div>
+						{{/get}}
+					</div>
+				</div>
+			</div>
+		</a>
+		{{/foreach}}
+		{{/get}}
+	</div>
+
+</main>
+{{/post}}

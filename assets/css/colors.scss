@@ -1,0 +1,54 @@
+/* Variables
+/* ---------------------------------------------------------- */
+
+:root {
+	--color-primary: #000;
+	--color-base: #1a1a1a;
+	--color-base-hover: #333;
+	--color-meta: #6e6e6e;
+	--color-disabled: #c4c4c4;
+
+	--color-selection-code: #1a1a1a;
+
+	--color-border: #eaecee;
+	--color-bg: #f9f9f9;
+	--color-bg-hover: #f4f4f4;
+	--color-bg-active: #ececec;
+
+	--color-facebook: #1877F2;
+	--color-twitter: #1DA1F2;
+	--color-instagram: #E4405F;
+	--color-github: #181717;
+	--color-linkedin: #0077B5;
+	--color-mastodon: #3088D4;
+	--color-pinterest: #BD081C;
+	--color-youtube: #FF0000;
+	--color-rss: #FFA500;
+
+	--color-email: #4f824b;
+	--color-permalink: #111;
+
+	--color-brand: #62517d;
+	--color-brand-border: #705e8c;
+	--color-brand-hover: #4b3a66;
+	--color-brand-contrast: #ffffff;
+
+	--color-white: #fff;
+	--color-black: #1a1a1a;
+	--color-lightgrey: #eee;
+	--color-green: #285728;
+	--color-red: #b53d3d;
+
+	--font-sans-serif: "Cooper Hewitt", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	--font-mono: "fira_monoregular", Menlo, Courier, monospace;
+
+	--font-light: 100;
+	--font-normal: 400;
+	--font-bold: 700;
+	--font-heavy: 900;
+
+	--radius: 3px;
+	--gap-mobile: 2rem;
+	--gap: 3rem;
+	--gap-medium: 2.5rem;
+}

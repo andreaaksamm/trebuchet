@@ -1,0 +1,47 @@
+{{!--
+Re-usable card for linking to posts
+--}}
+<article class="c-card {{post_class}}">
+	{{#if primary_tag.accent_color}}
+		<span class="c-card__primary-color {{#unless feature_image}}c-card__primary-color--no-background{{/unless}}" style="border-color: {{primary_tag.accent_color}};"></span>
+	{{/if}}
+	<div class="c-card__media">
+		{{#if feature_image}}
+		<a href="{{url}}" class="c-card__image-wrap">
+			<img class="c-card__image lazyload"
+					 data-src="{{img_url feature_image size='m'}}"
+			     data-srcset="{{img_url feature_image size="m"}} 600w,
+			      				    {{img_url feature_image size="l"}} 1200w,
+			      				    {{img_url feature_image size="xl"}} 2000w"
+					 sizes="(min-width: 550px) 1000px, 600px"
+					 alt="{{title}}"
+					 />
+		</a>
+		{{/if}}
+	</div>
+
+	<div class="c-card__content">
+
+		<div class="c-card__heading">
+			<h2 class="c-card__title"><a class="c-card__title-link" href="{{url}}">{{title}}</a></h2>
+			<div class="c-card__visibility"><span>{{t visibility}}</span></div>
+		</div>
+
+		<div class="c-card__meta">
+			{{#if featured}}
+			<span class="c-card__featured">{{t "featured"}}</span>
+			{{/if}}
+			{{#if primary_tag}}
+			<a href="{{primary_tag.url}}" class="c-card__tag">{{primary_tag.name}}</a>
+			{{/if}}
+			<span class="c-card__date">
+				<time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D, YYYY"}}</time>
+			</span>
+			<span class="c-card__authors">
+				{{#has author="count:>2"}}{{t "Multiple authors"}}{{else}}{{authors separator=(t " and ")}}{{/has}}
+			</span>
+		</div>
+		<div class="c-card__excerpt">{{excerpt}}</div>
+
+	</div>
+</article>

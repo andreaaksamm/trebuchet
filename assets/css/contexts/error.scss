@@ -1,0 +1,19 @@
+.c-error {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align:center;
+}
+
+		.c-error__status-code {
+			font-size: 8rem;
+			line-height: 9rem;
+		}
+
+		.c-error__message {
+			font-size: 2rem;
+		}
+
+		.c-error__back {
+			margin-top: 0.5rem;
+		}

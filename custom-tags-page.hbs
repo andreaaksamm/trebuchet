@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{#post}}
+<main class="c-site-main">
+
+	<header class="c-page-header {{#if feature_image}}c-page-header--background{{/if}}">
+		{{#if feature_image}}
+		<div class="c-page-header__image-wrapper">
+			<img class="c-page-header__image lazyload"
+					 data-src="{{img_url feature_image size='m'}}"
+			     data-srcset="{{img_url feature_image size="m"}} 600w,
+			      				    {{img_url feature_image size="l"}} 1200w,
+			      				    {{img_url feature_image size="xl"}} 2000w"
+					 sizes="(min-width: 1000px) 2000px,
+					        (min-width: 600px) 1200px, 600px"
+					 alt="{{@site.title}}"
+					 />
+		</div>
+		{{/if}}
+
+		<div class="c-page-header__content o-inner">
+			<h1 class="c-page-header__title">{{title}}</h1>
+			{{#if content}}
+			<div class="c-page-header__sub-title">{{content}}</div>
+			{{/if}}
+		</div>
+	</header>
+
+	<div class="c-tags-content">
+		{{#get "tags"}}
+		{{#foreach tags}}
+		<a class="c-tag-item" href="{{url}}">
+
+			<div class="c-tag-item__inside o-inner-wide">
+				<div class="c-tag-item__image-wrapper">
+					{{#if feature_image}}
+					<img class="c-tag-item__image lazyload" src="{{img_url feature_image size='s'}}" alt="tag {{name}}"/>
+					{{else}}
+					<img class="c-tag-item__image c-tag-item__image--no-image lazyload" src="{{asset 'images/no-post-image-150.png'}}" alt="tag {{name}}"/>
+					{{/if}}
+				</div>
+
+				<div class="c-tag-item__info o-inner-wide">
+					<div class="c-tag-item__title">#{{slug}}</div>
+					<div class="c-tag-item__description">{{description}}</div>
+					<div class="c-tag-item__meta">
+						{{#get "posts" filter="tag:{{slug}}"}}
+						<div class="c-tag-item__posts">{{plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</div>
+						{{/get}}
+					</div>
+				</div>
+			</div>
+		</a>
+		{{/foreach}}
+		{{/get}}
+	</div>
+
+</main>
+{{/post}}

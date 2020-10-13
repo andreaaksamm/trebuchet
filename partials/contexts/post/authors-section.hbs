@@ -1,0 +1,52 @@
+<div id="post-authors" class="c-post-section c-post-section--authors">
+
+	<div class="c-post-section__title-wrapper">
+		<div class="c-post-section__start o-inner">
+			<div class="c-post-section__title">
+				Written by
+			</div>
+		</div>
+	</div>
+
+	<div class="c-post-section__content o-inner">
+		<div class="c-post-section__authors">
+			<div class="c-authors-list">
+				{{#foreach authors}}
+					<div class="c-author-list__item">
+						<a href="{{url}}" class="c-author-list__image-wrapper">
+							{{#if profile_image}}
+								<img class="c-author-list__image lazyload" src="{{img_url profile_image size="s"}}" alt="author-{{name}}"/>
+							{{else}}
+								<img class="c-author-list__image c-author-list__image--no-image lazyload" src="{{asset 'images/no-author-image.png'}}" alt="author-{{name}}"/>
+							{{/if}}
+						</a>
+						<div class="c-author-list__item-info">
+							<h3 class="c-author-list__name">
+								<a  class="c-author-list__name-link" href="{{url}}">
+									{{ name }}
+								</a>
+							</h3>
+
+							<div class="c-author-list__bio">
+								{{ bio }}
+							</div>
+
+							<ul class="c-author-list__social">
+								{{#if facebook}}
+									<li class="c-author-list__social-item u-social-icon u-social-icon--facebook"><a class="u-hide-link-text" rel="noopener" target="_blank" href="{{facebook_url}}">facebook author page{{> icons/facebook}}</a></li>
+								{{/if}}
+								{{#if twitter}}
+									<li class="c-author-list__social-item u-social-icon u-social-icon--twitter"><a class="u-hide-link-text" rel="noopener" target="_blank" href="{{twitter_url}}">twitter author page{{> icons/twitter}}</a></li>
+								{{/if}}
+								{{#if website}}
+									<li class="c-author-list__social-item u-social-icon u-social-icon--permalink"><a class="u-hide-link-text" rel="noopener" target="_blank" href="{{website}}">author website{{> icons/link}}</a></li>
+								{{/if}}
+							</ul>
+						</div>
+					</div>
+				{{/foreach}}
+			</div>
+		</div>
+	</div>
+
+</div>

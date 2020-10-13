@@ -1,0 +1,110 @@
+/*------------------------------------*\
+$NOTIFICATIONS
+\*------------------------------------*/
+
+.c-notification {
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 9000;
+	border-bottom: 1px solid var(--color-brand);
+	padding: 26px 60px 22px;
+	color: var(--color-base);
+	font-size: 1.6rem;
+	line-height: 1.3em;
+	text-align: center;
+	background: var(--color-white);;
+	transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+	transform: translateY(-175%);
+}
+
+.subscribe-success .c-notification-subscribe {
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.signup-success .c-notification-signup {
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.signin-success .c-notification-signin {
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.signin-failure .c-notification-signin-failure {
+	visibility: visible;
+	color: var(--color-white);
+	background: var(--color-red);
+	transform: translateY(0);
+	border-color: color-mod(var(--color-white) a(10%));
+}
+
+.checkout-success .c-notification-checkout {
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.billing-success .c-notification-billing-update {
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.billing-cancel .c-notification-billing-update-cancel {
+	visibility: visible;
+	color: var(--color-white);
+	background: var(--color-red);
+	transform: translateY(0);
+	border-color: color-mod(var(--color-white) a(10%));
+}
+
+.c-notification.closed {
+	visibility: hidden;
+	transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+	transform: translateY(-175%);
+}
+
+.c-notification__close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+}
+
+.c-notification__close:before {
+	content: "";
+	position: absolute;
+	top: 34px;
+	right: 25px;
+	display: block;
+	width: 18px;
+	height: 2px;
+	background: currentColor;
+	border-radius: 2px;
+	transform: rotate(45deg);
+	background-color: var(--color-meta);
+}
+
+.c-notification__close:after {
+	content: "";
+	position: absolute;
+	top: 34px;
+	right: 25px;
+	display: block;
+	width: 18px;
+	height: 2px;
+	background: currentColor;
+	border-radius: 2px;
+	transform: rotate(-45deg);
+	background-color: var(--color-meta);
+}
+
+.c-notification__close:hover::before,
+.c-notification__close:hover::after {
+	background-color: var(--color-black);
+}

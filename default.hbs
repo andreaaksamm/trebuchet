@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="" lang="{{@site.lang}}">
+	<head>
+
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <link rel="stylesheet" type="text/css" href="{{asset "built/styles.css"}}"/> -->
+		<style>
+			{{> compiled/inline-styles}}
+		</style>
+
+		<title>{{meta_title}}</title>
+
+		{{ghost_head}}
+		{{!-- Outputs important meta data and settings, should always be in <head> --}}
+
+		</head>
+		<body class="{{body_class}}">
+
+			<div class="c-site">
+				{{> components/header }}
+
+				{{{body}}}
+				{{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+
+				{{^is "post"}}
+				{{> components/footer }}
+				{{/is}}
+			</div>
+			<script src="{{asset "built/libs.js"}}"></script>
+			<script src="{{asset "built/main.js"}}"></script>
+
+			{{#is "post, page"}}
+			<script src="{{asset "built/post-libs.js"}}"></script>
+			<script src="{{asset "built/post.js"}}"></script>
+			{{/is}}
+
+			{{> search }}
+
+			{{> social-icons }}
+			{{> notifications }}
+
+			{{ghost_foot}}
+			{{!-- Outputs important scripts - should always be included before closing body tag --}}
+		</body>
+</html>

@@ -1,0 +1,18 @@
+{{#get "tags"}}
+	{{#if tags}}
+		<div class="c-tags">
+			<div class="c-tags-wrapper o-inner-wide">
+				<ul class="c-tags-list dragscroll">
+					<li class="c-tags-list__item">
+						<a class="c-tags-list__item-link" href="{{url}}">Latest</a>
+					</li>
+					{{#foreach tags}}
+						<li class="c-tags-list__item">
+							<a class="c-tags-list__item-link" href="{{url}}">{{name}}</a>
+						</li>
+					{{/foreach}}
+				</ul>
+			</div>
+		</div>
+	{{/if}}
+{{/get}}

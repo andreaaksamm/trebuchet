@@ -1,0 +1,137 @@
+.c-account-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 4rem auto;
+}
+
+		.c-account-box__content {
+			margin-top: 2rem;
+		}
+
+		.c-account-box__text {
+			margin-top: 1rem;
+		}
+
+				.c-account-box__avatar-wrapper {
+					border: 1px solid var(--color-border);
+					border-radius: 90px;
+					padding: 3px;
+					width: 160px;
+					height: 200px;
+					overflow: hidden;
+				}
+
+				.c-account-box__avatar {
+					border-radius: 88px;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				.c-account-box__sub-title {
+					margin-top: 2rem;
+				}
+
+				.c-account-box__action {
+					margin-top: 1.25rem;
+				}
+
+				.c-account-box__button {
+					display: inline-block;
+				}
+
+
+		.c-details {
+			margin: 0 auto;
+			margin-top: 2rem;
+			border: 1px solid var(--color-border);
+			border-radius: var(--radius);
+			width: 100%;
+			max-width: 590px;
+			overflow: hidden;
+		}
+
+		.c-details-box {
+			padding: 0 2rem;
+			margin-bottom:2rem;
+			width: 100%;
+			text-align: left;
+		}
+
+		.c-details-box__detail {
+			padding-top: 2rem;
+		}
+
+				@media (min-width: 550px) {
+					.c-details-box {
+						display: flex;
+						flex-wrap: wrap;
+					}
+
+					.c-details-box__detail {
+						flex: 1 0 50%;
+					}
+				}
+
+				.c-details-box__actions {
+					border-top:  1px solid var(--color-border);
+					list-style: none;
+				}
+
+				a.c-details-box__actions-item-link {
+					color: var(--color-white);
+				}
+
+				@media (min-width: 550px) {
+					.c-details-box__actions {
+						display: flex;
+					}
+
+					.c-details-box__actions-item {
+						flex: 1 0 50%;
+					}
+				}
+
+				.c-details-box__actions-item-link--cancel {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-top: 1px solid var(--color-brand-border);
+				}
+
+				.c-details-box__actions-item-link--cancel:hover {
+					color: var(--color-white);
+				}
+
+				.c-details-box__actions-item-link--cancel[data-members-cancel-subscription]:hover {
+					background-color: var(--color-red);
+				}
+
+				.c-details-box__actions-item-link--cancel[data-members-continue-subscription]:hover {
+					background-color: var(--color-green);
+				}
+
+
+				.c-details-box__actions-item-link--cancel.loading::after {
+					margin-left: 9px;
+					content: "";
+					display: block;
+					height: 16px;
+					width: 16px;
+					border: 2px solid var(--color-white);
+					border-radius: 100%;
+					border-right-color: transparent;
+					border-top-color: transparent;
+					-webkit-animation: spin .5s infinite linear;
+					animation: spin .5s infinite linear;
+				}
+
+				@media (min-width: 550px) {
+					.c-details-box__actions-item-link--cancel {
+						border-top: 0;
+						border-left: 1px solid var(--color-brand-border);
+					}
+				}
